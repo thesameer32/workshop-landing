@@ -60,21 +60,14 @@ export default function KishanWorkshopLanding() {
       const url = `${GAS_WEB_APP_URL}?origin=${encodeURIComponent(originForMatch)}`;
 
       // Send to Google Apps Script with proper CORS (your GAS handles OPTIONS + CORS headers)
-      const resp = await fetch(url, {
+      await fetch(url, {
         method: "POST",
+        mode: "no-cors", // avoid preflight; GAS will still receive the payload
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ name, email, phone, utm_source, utm_campaign, source, user_agent }),
       });
-
-      // Try reading response (if CORS allowed). If opaque or parse fails, still consider as success fallback.
-      let ok = true;
-      try {
-        const json = await resp.json();
-        ok = !!json?.ok;
-      } catch {}
-      if (!ok) throw new Error('Submission failed');
 
       setOpenSuccess(true);
       formRef.current.reset();
