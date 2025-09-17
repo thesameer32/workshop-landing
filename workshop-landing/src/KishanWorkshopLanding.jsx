@@ -47,17 +47,34 @@ export default function KishanWorkshopLanding() {
       leads.push({ name, email, phone, ts: new Date().toISOString() });
       localStorage.setItem("bwk_leads", JSON.stringify(leads));
 
-      // Send to Google Apps Script (sheets backend)
-      // Using no-cors so the browser doesn't block due to CORS; response body won't be readable.
-      // Ensure your GAS web app is deployed with access: "Anyone" (not just within domain).
-      await fetch(GAS_WEB_APP_URL, {
+      // Build extras to match your GAS handler shape
+      const params = new URLSearchParams(window.location.search);
+      const utm_source = params.get('utm_source') || '';
+      const utm_campaign = params.get('utm_campaign') || '';
+      const source = 'render';
+      const user_agent = navigator.userAgent || '';
+
+      // Provide origin as query param for your doPost(e.parameter.origin) logic
+      const originBase = window.location.origin;
+      const originForMatch = originBase.includes('onrender.com') ? `${originBase}/` : originBase; // match your ORIGINS list
+      const url = `${GAS_WEB_APP_URL}?origin=${encodeURIComponent(originForMatch)}`;
+
+      // Send to Google Apps Script with proper CORS (your GAS handles OPTIONS + CORS headers)
+      const resp = await fetch(url, {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, phone }),
+        body: JSON.stringify({ name, email, phone, utm_source, utm_campaign, source, user_agent }),
       });
+
+      // Try reading response (if CORS allowed). If opaque or parse fails, still consider as success fallback.
+      let ok = true;
+      try {
+        const json = await resp.json();
+        ok = !!json?.ok;
+      } catch {}
+      if (!ok) throw new Error('Submission failed');
 
       setOpenSuccess(true);
       formRef.current.reset();
