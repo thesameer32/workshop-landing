@@ -90,7 +90,7 @@ export default function KishanWorkshopLanding() {
 
       {/* Navbar */}
       <header className="sticky top-0 z-40 backdrop-blur-md bg-[#05080f]/60 border-b border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+        <div className="w-full px-4 md:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 shadow-[0_10px_30px_rgba(37,99,235,.45)]"/>
             <span className="font-semibold tracking-wide">Build with Kishan</span>
@@ -107,7 +107,7 @@ export default function KishanWorkshopLanding() {
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 md:pt-24 md:pb-14 grid md:grid-cols-2 gap-10 items-center">
+        <div className="w-full px-4 md:px-6 pt-16 pb-8 md:pt-24 md:pb-14 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <motion.p initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{delay:.05}} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/70">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"/> Free 7‑Day Mega Workshop • Google Meet
@@ -181,7 +181,7 @@ export default function KishanWorkshopLanding() {
 
       {/* What you'll learn */}
       <section id="learn" className="py-10 md:py-16">
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="w-full px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {t:'Zero to One Clarity', d:'Business ka simple lens: Problem → Solution → Distribution → Money.'},
@@ -200,7 +200,7 @@ export default function KishanWorkshopLanding() {
 
       {/* Agenda grid */}
       <section id="agenda" className="py-8 md:py-16">
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="w-full px-4 md:px-6">
           <h2 className="text-2xl md:text-3xl font-bold">7‑Day Agenda</h2>
           <div className="mt-6 grid md:grid-cols-4 gap-5">
             {[
@@ -224,7 +224,7 @@ export default function KishanWorkshopLanding() {
 
       {/* Registration Card */}
       <section id="register" className="py-8 md:py-16">
-        <div className="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-8 items-start">
+        <div className="w-full px-4 md:px-6 grid md:grid-cols-2 gap-8 items-start">
           <div className="rounded-3xl border border-white/10 bg-white/[.03] p-6 md:p-8 shadow-[0_20px_60px_rgba(0,0,0,.45)]">
             <h3 className="text-xl md:text-2xl font-bold">Register Free — Seats Limited</h3>
             <p className="mt-1 text-white/70 text-sm">Join link WhatsApp + Email par bhej diya jayega. Daily reminder + resources.</p>
@@ -264,7 +264,7 @@ export default function KishanWorkshopLanding() {
 
       {/* Host */}
       <section id="host" className="py-8 md:py-16">
-        <div className="mx-auto max-w-7xl px-4 grid md:grid-cols-[1.2fr_.8fr] gap-8 items-center">
+        <div className="w-full px-4 md:px-6 grid md:grid-cols-[1.2fr_.8fr] gap-8 items-center">
           <div className="order-2 md:order-1">
             <h2 className="text-2xl md:text-3xl font-bold">Meet Your Host — Kishan Kumar</h2>
             <p className="mt-3 text-white/70">Founder & growth strategist. Built a ₹1CR+ Instagram‑led business ecosystem with his brother. Known for brutal clarity, no‑fluff frameworks and execution‑first teaching style.</p>
@@ -287,7 +287,7 @@ export default function KishanWorkshopLanding() {
 
       {/* FAQ */}
       <section id="faq" className="py-8 md:py-16">
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="w-full px-4 md:px-6">
           <h2 className="text-2xl md:text-3xl font-bold">FAQs</h2>
           <div className="mt-6 grid md:grid-cols-2 gap-5">
             {[{q:'Kya yeh free hai?',a:'Haan — 7 din ka live program bilkul free hai. Join link WhatsApp + Email par milega.'},{q:'Recording milegi?',a:'Limited-time replay denge. Best hai live attend karo (Q&A ke liye).'}, {q:'Platform kya hoga?',a:'Google Meet — zero barrier, mobile se bhi instantly join.'}, {q:'Beginner attend kar sakta/ sakti hai?',a:'Bilkul — yeh 0→1 founders, students, creators, SMB owners sab ke liye hai.'}].map((f,i)=>(
@@ -302,7 +302,7 @@ export default function KishanWorkshopLanding() {
 
       {/* Footer CTA */}
       <section className="py-10 md:py-16 border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 grid md:grid-cols-3 gap-6 items-center">
+        <div className="w-full px-4 md:px-6 grid md:grid-cols-3 gap-6 items-center">
           <div className="md:col-span-2">
             <h3 className="text-2xl md:text-3xl font-bold">Join the 7‑Day Mega Workshop — Free</h3>
             <p className="mt-2 text-white/70">Execution‑first system for modern startups. Starts 24 Sept, 7 PM IST.</p>
@@ -317,7 +317,7 @@ export default function KishanWorkshopLanding() {
       </section>
 
       <footer className="py-8">
-        <div className="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
+        <div className="w-full px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
           <p>© {new Date().getFullYear()} Build with Kishan. All rights reserved.</p>
           <div className="flex items-center gap-5">
             <a className="hover:text-white transition" href="#">Privacy</a>
