@@ -20,7 +20,7 @@ const useCountdown = (targetDateISO) => {
 export default function KishanWorkshopLanding() {
   // Google Apps Script Web App URL (Deploy > Test deployments > Web app)
   // Note: If the script isn't deployed with access "Anyone", the request may redirect to Google Sign-in.
-  const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzgp_WPtV3kdi4mKvx5ySlsyvkb8e_Y7cTS7dleidj4vbaUOlInSaMHr1uomldJ53Vmng/exec";
+  const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzo7eHejWTrLBQtYtskpHSYj6crwqltXB5OW4SX3Jk1En1oKmdueYYlpuX7D4QQFcmNoA/exec";
   const { d, h, m, s } = useCountdown("2025-09-24T19:00:00+05:30"); // 24 Sept 7 PM IST default
   const [openSuccess, setOpenSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
